@@ -7,7 +7,7 @@
     "type": "git"
   },
   "scripts": {
-    "dev": "vbuild -dc <% if (eslint) { %>--eslint<% } %>",
+    "dev": "vbuild -dc<% if (eslint) { %> --eslint<% } %>",
     "build": "vbuild -c"
   },
   "author": "<%= username %> <<%= email %>>",
