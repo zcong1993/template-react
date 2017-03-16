@@ -28,7 +28,7 @@ module.exports = {
       store: true
     },
     eslint: {
-      message: 'Lint code while webpack compiler?',
+      message: 'Lint code while webpack compiling?',
       type: 'confirm',
       default: true
     },
