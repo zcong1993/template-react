@@ -1,5 +1,3 @@
-const superb = require('superb')
-
 module.exports = {
   prompts: {
     name: {
@@ -8,7 +6,7 @@ module.exports = {
     },
     description: {
       message: 'How would you descripe the new project?',
-      default: `my ${superb()} project`
+      default: `my awesome react project`
     },
     username: {
       message: 'What is your GitHub username?',
