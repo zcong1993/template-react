@@ -1,5 +1,7 @@
 # template-react
 
+[![NPM version](https://img.shields.io/npm/v/template-react.svg?style=flat)](https://npmjs.com/package/template-react) [![NPM downloads](https://img.shields.io/npm/dm/template-react.svg?style=flat)](https://npmjs.com/package/template-react)
+
 > SAO template for react with vbuild, a bit more flixible than create-react-app
 
 ## Usage
