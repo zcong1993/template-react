@@ -25,6 +25,11 @@ module.exports = {
       },
       store: true
     },
+    offline: {
+      message: 'Add offline support?',
+      type: 'confirm',
+      default: false
+    },
     eslint: {
       message: 'Lint code while webpack compiling?',
       type: 'confirm',
@@ -35,6 +40,9 @@ module.exports = {
       type: 'confirm',
       default: true
     }
+  },
+  filters: {
+    'src/pwa.js': 'offline'
   },
   move: {
     'gitignore': '.gitignore'
