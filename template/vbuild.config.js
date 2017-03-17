@@ -1,4 +1,9 @@
-module.exports = {
+<%_ if (offline) { -%>
+const path = require('path')
+const OfflinePlugin = require('offline-plugin')
+
+<%_ } -%>
+module.exports = options => ({
   entry: 'src/index.js',
   webpack(config) {
     config.entry.client.unshift('react-hot-loader/patch')
@@ -14,4 +19,4 @@ module.exports = {
     <%_ } -%>
     return config
   }
-}
+})
