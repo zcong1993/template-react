@@ -28,10 +28,27 @@ $ sao react --install
 
 ## Options
 
+### offline
+type: bool
+
+default: false
+
+create a react project support offline
+
+`Note:` offline need vbuild as dev devDependency, if set true, vbuild will add into devDependencies automatically
+
 ### eslint
+type: bool
+
+default: true
+
 lint your code while webpack compiling
 
 ### vbuild
+type: bool
+
+default: true
+
 add vbuild as devDependency. Make sure you have installed `vbuild` globally when set false.
 
 ## License
