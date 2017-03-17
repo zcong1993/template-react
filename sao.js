@@ -38,7 +38,8 @@ module.exports = {
     vbuild: {
       message: 'Add vbuild as devDependency?',
       type: 'confirm',
-      default: true
+      default: true,
+      when: answers => !answers.offline
     }
   },
   filters: {
