@@ -15,7 +15,7 @@
   "devDependencies": {
     "babel-plugin-react-require": "^3.0.0",
     "babel-preset-react-app": "^2.1.1",
-    "react-hot-loader": "next"<% if (vbuild) { %>,
+    "react-hot-loader": "next"<% if (vbuild || offline) { %>,
     "vbuild": "^6.24.0"<% } %><% if (offline) { %>,
     "offline-plugin": "^4.6.1"<% } %>
   },
