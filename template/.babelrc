@@ -1,4 +1,4 @@
 {
   "presets": ["react-app"],
-  "plugins": ["react-require", "react-hot-loader/babel"]
+  "plugins": ["transform-decorators-legacy", "react-require", "react-hot-loader/babel"]
 }
