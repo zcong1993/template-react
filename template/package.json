@@ -15,6 +15,7 @@
   "devDependencies": {
     "babel-plugin-react-require": "^3.0.0",
     "babel-preset-react-app": "^2.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "react-hot-loader": "next"<% if (vbuild || offline) { %>,
     "vbuild": "^6.24.0"<% } %><% if (offline) { %>,
     "offline-plugin": "^4.6.1"<% } %>
@@ -22,10 +23,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-decorators-legacy": "^1.3.4"
-  },
+  }
   "xo": {
     "parser": "babel-eslint"
   }
