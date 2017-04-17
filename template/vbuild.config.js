@@ -5,17 +5,18 @@ const OfflinePlugin = require('offline-plugin')
 <%_ } -%>
 module.exports = options => ({
   entry: 'src/index.js',
-  webpack(config) {
-    config.entry.client.unshift('react-hot-loader/patch')
+  extendWebpack(config) {
+    config.entry('client').prepend('react-hot-loader/patch')
     <%_ if (offline) { -%>
-    if (!options.dev) {
-      config.plugins.push(new OfflinePlugin({
-        ServiceWorker: {
-          events: true
-        }
-      }))
+    if (options.mode === 'production') {
+      config.plugin('offline')
+        .use(OfflinePlugin, [{
+          ServiceWorker: {
+            events: true
+          }
+        }])
     }
-    config.resolve.modules.push(path.resolve('src'))
+    config.resolve.modules.add(path.resolve('src'))
     <%_ } -%>
     return config
   }

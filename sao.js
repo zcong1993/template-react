@@ -30,11 +30,6 @@ module.exports = {
       type: 'confirm',
       default: false
     },
-    eslint: {
-      message: 'Lint code while webpack compiling?',
-      type: 'confirm',
-      default: true
-    },
     vbuild: {
       message: 'Add vbuild as devDependency?',
       type: 'confirm',
