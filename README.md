@@ -39,13 +39,6 @@ create a react project support offline
 
 `Note:` offline need vbuild as dev devDependency, if set true, vbuild will add into devDependencies automatically
 
-### eslint
-type: bool
-
-default: true
-
-lint your code while webpack compiling
-
 ### vbuild
 type: bool
 
