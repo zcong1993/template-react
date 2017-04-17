@@ -1,5 +1,7 @@
 # template-react
 
+Now using [vbuild 7](https://github.com/egoist/vbuild), for 6.0 please see branch [6.0](https://github.com/zcong1993/template-react/tree/6.0)
+
 [![NPM version](https://img.shields.io/npm/v/template-react.svg?style=flat)](https://npmjs.com/package/template-react) [![NPM downloads](https://img.shields.io/npm/dm/template-react.svg?style=flat)](https://npmjs.com/package/template-react)
 
 > SAO template for react with vbuild, a bit more flixible than create-react-app
@@ -22,7 +24,7 @@ $ sao zcong1993/template-react --install
 $ sao react
 # the first time
 $ yarn global add template-react
-# or 
+# or
 $ sao react --install
 ```
 
