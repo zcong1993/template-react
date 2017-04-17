@@ -18,6 +18,5 @@ module.exports = options => ({
     }
     config.resolve.modules.add(path.resolve('src'))
     <%_ } -%>
-    return config
   }
 })
