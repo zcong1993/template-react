@@ -46,6 +46,13 @@ default: true
 
 add vbuild as devDependency. Make sure you have installed `vbuild` globally when set false.
 
+### xo
+type: bool
+
+default: true
+
+use `xo` lint your code, you can use `npm run lint` and `npm run lint:fix` when set true
+
 ## License
 
 MIT &copy; [zcong1993](github.com/zcong1993)
