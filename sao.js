@@ -25,6 +25,11 @@ module.exports = {
       },
       store: true
     },
+    xo: {
+      message: 'Use xo lint your code?',
+      type: 'confirm',
+      default: true
+    },
     offline: {
       message: 'Add offline support?',
       type: 'confirm',
