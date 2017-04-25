@@ -49,7 +49,7 @@ module.exports = {
   },
   filters: {
     'src/pwa.js': 'offline',
-    'src/__test__': 'test'
+    'src/__test__/**': 'test'
   },
   move: {
     'gitignore': '.gitignore'
