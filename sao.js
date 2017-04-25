@@ -30,6 +30,11 @@ module.exports = {
       type: 'confirm',
       default: true
     },
+    test: {
+      message: 'Need jest test?',
+      type: 'confirm',
+      default: false
+    },
     offline: {
       message: 'Add offline support?',
       type: 'confirm',
@@ -43,7 +48,8 @@ module.exports = {
     }
   },
   filters: {
-    'src/pwa.js': 'offline'
+    'src/pwa.js': 'offline',
+    'src/__test__': 'test'
   },
   move: {
     'gitignore': '.gitignore'
