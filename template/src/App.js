@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Tittle from './components/Tittle'
+import Title from './components/Title'
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Tittle />
+        <Title />
         <p>React has been successfully running for <span style={{ color: 'red' }}>{this.state.seconds}</span> seconds.</p>
       </div>
     )
