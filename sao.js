@@ -35,6 +35,12 @@ module.exports = {
       type: 'confirm',
       default: false
     },
+    enzyme: {
+      message: 'Need enzyme shallow lib with test?',
+      type: 'confirm',
+      default: true,
+      when: answers => answers.test
+    },
     offline: {
       message: 'Add offline support?',
       type: 'confirm',
