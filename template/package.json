@@ -7,8 +7,8 @@
     "type": "git"
   },
   "scripts": {
-    "dev": "vbuild dev",
-    "test": "xo<% if (test) { %> && react-jest --env=jsdom<% } %>",
+    "dev": "vbuild dev",<% if (xo || test) { %>
+    "test": "xo<% if (test) { %> && react-jest --env=jsdom<% } %>",<% } %>
     "build": "vbuild"<% if (xo) { %>,
     "lint": "xo",
     "lint:fix": "xo --fix"<% } %>
