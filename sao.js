@@ -31,7 +31,7 @@ module.exports = {
       default: true
     },
     test: {
-      message: 'Need jest test?',
+      message: 'Need jest for testing?',
       type: 'confirm',
       default: false
     },

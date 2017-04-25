@@ -53,6 +53,20 @@ default: true
 
 use `xo` lint your code, you can use `npm run lint` and `npm run lint:fix` when set true
 
+### test
+type: bool
+
+default: false
+
+if using [react-jest](https://github.com/egoist/react-jest) test your react app.
+
+### enzyme
+type: bool
+
+default: true
+
+if need `enzyme shallow` lib with test. Only work when `test` options set true. More about `enzyme shallow` please see [document](http://airbnb.io/enzyme/docs/api/shallow.html)
+
 ## License
 
 MIT &copy; [zcong1993](github.com/zcong1993)
