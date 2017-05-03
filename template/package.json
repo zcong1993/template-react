@@ -7,9 +7,9 @@
     "type": "git"
   },
   "scripts": {
-    "dev": "vbuild dev",<% if (xo || test) { %>
+    "dev": "poi",<% if (xo || test) { %>
     "test": "xo<% if (test) { %> && react-jest --env=jsdom<% } %>",<% } %>
-    "build": "vbuild"<% if (xo) { %>,
+    "build": "poi build"<% if (xo) { %>,
     "lint": "xo",
     "lint:fix": "xo --fix"<% } %>
   },
@@ -22,8 +22,8 @@
     "react-jest": "^0.2.0",<% } %><% if (enzyme) { %>
     "react-test-renderer": "^15.5.4",
     "enzyme": "^2.8.2",<% } %>
-    "react-hot-loader": "next"<% if (vbuild || offline) { %>,
-    "vbuild": "^7"<% } %><% if (offline) { %>,
+    "react-hot-loader": "next"<% if (poi || offline) { %>,
+    "poi": "^8.0.0-rc.4"<% } %><% if (offline) { %>,
     "offline-plugin": "^4.6.1"<% } %><% if (xo) {%>,
     "babel-eslint": "^7.2.2",
     "eslint-config-vue-app": "^1.2.1",

@@ -46,7 +46,7 @@ module.exports = {
       type: 'confirm',
       default: false
     },
-    vbuild: {
+    poi: {
       message: 'Add vbuild as devDependency?',
       type: 'confirm',
       default: true,
