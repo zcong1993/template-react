@@ -1,5 +1,7 @@
 # template-react
 
+Now `vbuild` is renamed to `poi`
+
 Now using [vbuild 7](https://github.com/egoist/vbuild), for 6.0 please see branch [6.0](https://github.com/zcong1993/template-react/tree/6.0)
 
 [![NPM version](https://img.shields.io/npm/v/template-react.svg?style=flat)](https://npmjs.com/package/template-react) [![NPM downloads](https://img.shields.io/npm/dm/template-react.svg?style=flat)](https://npmjs.com/package/template-react)
@@ -37,14 +39,14 @@ default: false
 
 create a react project support offline
 
-`Note:` offline need vbuild as dev devDependency, if set true, vbuild will add into devDependencies automatically
+`Note:` offline need poi as dev devDependency, if set true, poi will add into devDependencies automatically
 
-### vbuild
+### poi
 type: bool
 
 default: true
 
-add vbuild as devDependency. Make sure you have installed `vbuild` globally when set false.
+add poi as devDependency. Make sure you have installed `poi` globally when set false.
 
 ### xo
 type: bool
