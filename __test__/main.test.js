@@ -41,5 +41,18 @@ it('add xo', () => {
   return sao.mockPrompt(template, opts)
     .then(({ files }) => {
       const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['eslint-config-vue-app']).toBeDefined()
+      expect(pkg.devDependencies['babel-eslint']).toBeDefined()
+      expect(pkg.devDependencies['xo']).toBeDefined()
+      expect(pkg.xo).toEqual({
+        parser: 'babel-eslint',
+        extends: 'vue-app',
+        rules: {
+          'unicorn/filename-case': 0
+        }
+      })
+      expect(pkg.scripts['lint']).toBe('xo')
+      expect(pkg.scripts['lint:fix']).toBe('xo --fix')
+      expect(pkg.scripts['test']).toBe('xo')
     })
 })
