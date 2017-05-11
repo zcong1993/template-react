@@ -60,11 +60,7 @@ module.exports = {
   move: {
     'gitignore': '.gitignore'
   },
-  post({log, chalk, isNewFolder, folderName, init}) {
-    init()
-    log.success('Done!')
-    if (isNewFolder) {
-      log.info(`cd ${chalk.yellow(folderName)} to get started!`)
-    }
-  }
+  showTip: true,
+  installDependencies: false,
+  gitInit: true
 }
