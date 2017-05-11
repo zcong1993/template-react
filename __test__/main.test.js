@@ -56,3 +56,18 @@ it('add xo', () => {
       expect(pkg.scripts['test']).toBe('xo')
     })
 })
+
+it('add test', () => {
+  const opts = Object.assign({}, baseMockPrompt, {
+    test: true,
+    enzyme: false
+  })
+  return sao.mockPrompt(template, opts)
+    .then(({ fileList, files }) => {
+      expect(fileList).toContain('src/__test__/App.test.js')
+
+      const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['react-jest']).toBeDefined()
+      expect(pkg.scripts['test']).toBe('xo && react-jest --env=jsdom')
+    })
+})
