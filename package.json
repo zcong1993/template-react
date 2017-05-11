@@ -6,10 +6,22 @@
     "url": "zcong1993/template-react",
     "type": "git"
   },
+  "scripts": {
+    "test": "jest test.js --env=node"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/template/"
+    ]
+  },
   "author": "zcong1993 <1005997919@qq.com> (github.com/zcong1993)",
   "license": "MIT",
   "files": [
     "sao.js",
     "template"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^19.0.2",
+    "sao": "^0.19.0"
+  }
 }
