@@ -71,3 +71,16 @@ it('add test', () => {
       expect(pkg.scripts['test']).toBe('xo && react-jest --env=jsdom')
     })
 })
+
+it('use enzyme', () => {
+  const opts = Object.assign({}, baseMockPrompt, {
+    test: true,
+    enzyme: true
+  })
+  return sao.mockPrompt(template, opts)
+    .then(({ files }) => {
+      const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['enzyme']).toBeDefined()
+      expect(files['src/__test__/App.test.js'].contents.toString()).toMatch('import { shallow } from \'enzyme\'')
+    })
+})
