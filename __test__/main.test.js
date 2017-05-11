@@ -84,3 +84,17 @@ it('use enzyme', () => {
       expect(files['src/__test__/App.test.js'].contents.toString()).toMatch('import { shallow } from \'enzyme\'')
     })
 })
+
+it('add offline', () => {
+  const opts = Object.assign({}, baseMockPrompt, {
+    offline: true
+  })
+  return sao.mockPrompt(template, opts)
+    .then(({ fileList, files }) => {
+      expect(fileList).toContain('src/pwa.js')
+
+      const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['offline-plugin']).toBeDefined()
+      expect(files['poi.config.js'].contents.toString()).toMatch('const OfflinePlugin = require(\'offline-plugin\')')
+    })
+})
