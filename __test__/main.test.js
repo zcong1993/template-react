@@ -98,3 +98,14 @@ it('add offline', () => {
       expect(files['poi.config.js'].contents.toString()).toMatch('const OfflinePlugin = require(\'offline-plugin\')')
     })
 })
+
+it('add poi', () => {
+  const opts = Object.assign({}, baseMockPrompt, {
+    poi: true
+  })
+  return sao.mockPrompt(template, opts)
+    .then(({ files }) => {
+      const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['poi']).toBeDefined()
+    })
+})
