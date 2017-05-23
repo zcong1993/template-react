@@ -7,11 +7,9 @@
     "type": "git"
   },
   "scripts": {
-    "dev": "poi",<% if (xo || test) { %>
-    "test": "xo<% if (test) { %> && react-jest --env=jsdom<% } %>",<% } %>
-    "build": "poi build"<% if (xo) { %>,
-    "lint": "xo",
-    "lint:fix": "xo --fix"<% } %>
+    "dev": "poi",
+    "test": "<%= test ? 'react-jest --env=jsdom':'echo \'no test\'' %>",
+    "build": "poi build"
   },
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
@@ -22,22 +20,12 @@
     "react-jest": "^0.2.0",<% } %><% if (enzyme) { %>
     "react-test-renderer": "^15.5.4",
     "enzyme": "^2.8.2",<% } %>
-    "react-hot-loader": "next"<% if (poi || offline) { %>,
-    "poi": "^8.0.0-rc.4"<% } %><% if (offline) { %>,
-    "offline-plugin": "^4.6.1"<% } %><% if (xo) {%>,
-    "babel-eslint": "^7.2.2",
-    "eslint-config-vue-app": "^1.2.1",
-    "xo": "^0.18.1"<% } %>
+    "react-hot-loader": "next",
+    "poi": "^8.0.5"<% if (lint !== 'never') { %>,
+    "poi-preset-eslint-react": "^0.0.2"<% } %>
   },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  }<% if (xo) { %>,
-  "xo": {
-    "parser": "babel-eslint",
-    "extends": "vue-app",
-    "rules": {
-      "unicorn/filename-case": 0
-    }
-  }<% } %>
+  }
 }

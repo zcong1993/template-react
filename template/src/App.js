@@ -12,13 +12,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.state.timer = setInterval(() => {
+    const timer = setInterval(() => {
       const elapsed = Math.round((new Date().getTime() - this.state.time) / 100)
       const seconds = (elapsed / 10) + (elapsed % 10 ? '' : '.0')
       this.setState({
         seconds
       })
     }, 50)
+    this.setState({
+      timer
+    })
   }
 
   componentWillUnmount() {

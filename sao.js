@@ -25,10 +25,15 @@ module.exports = {
       },
       store: true
     },
-    xo: {
-      message: 'Use xo lint your code?',
-      type: 'confirm',
-      default: true
+    lint: {
+      message: 'Choose the eslint mode:',
+      type: 'list',
+      choices: [
+        'all mode',
+        'only prod',
+        'only dev',
+        'never'
+      ]
     },
     test: {
       message: 'Need jest for testing?',
@@ -40,21 +45,9 @@ module.exports = {
       type: 'confirm',
       default: true,
       when: answers => answers.test
-    },
-    offline: {
-      message: 'Add offline support?',
-      type: 'confirm',
-      default: false
-    },
-    poi: {
-      message: 'Add vbuild as devDependency?',
-      type: 'confirm',
-      default: true,
-      when: answers => !answers.offline
     }
   },
   filters: {
-    'src/pwa.js': 'offline',
     'src/__test__/**': 'test'
   },
   move: {
