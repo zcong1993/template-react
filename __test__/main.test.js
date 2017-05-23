@@ -7,53 +7,43 @@ const template = {
 const baseMockPrompt = {
   username: 'test',
   email: 'test@test.com',
-  xo: true,
+  pwa: false,
+  lint: 'never',
   test: false,
-  enzyme: false,
-  offline: false,
-  poi: true
+  enzyme: false
 }
 
 it('default', () => {
   return sao.mockPrompt(template, baseMockPrompt)
     .then(({ fileList }) => {
-      expect(fileList).toEqual([
-        '.editorconfig',
-        '.gitattributes',
-        'LICENSE',
-        'README.md',
-        'circle.yml',
-        'package.json',
-        '.gitignore',
-        '.babelrc',
-        'poi.config.js',
-        'src/App.js',
-        'src/components/Title.js',
-        'src/index.js'
-      ].sort())
+      expect(fileList).toEqual(['.babelrc', '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'circle.yml', 'index.ejs', 'package.json', 'poi.config.js', 'src/App.js', 'src/components/Title.js', 'src/index.js', 'static/android-chrome-192x192.png', 'static/android-chrome-512x512.png', 'static/apple-touch-icon.png', 'static/browserconfig.xml', 'static/favicon-16x16.png', 'static/favicon-32x32.png', 'static/favicon.ico', 'static/mstile-150x150.png', 'static/safari-pinned-tab.svg'].sort())
   })
 })
 
-it('add xo', () => {
+it('add pwa', () => {
   const opts = Object.assign({}, baseMockPrompt, {
-    xo: true
+    pwa: true
+  })
+  return sao.mockPrompt(template, opts)
+    .then(({ fileList, files }) => {
+      expect(fileList).toContain('src/pwa.js')
+
+      const pkg = JSON.parse(files['package.json'].contents.toString())
+      expect(pkg.devDependencies['poi-preset-offline']).toBeDefined()
+      expect(files['poi.config.js'].contents.toString()).toMatch('require(\'poi-preset-offline\')')
+      expect(files['index.ejs'].contents.toString()).toMatch('<link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">')
+    })
+})
+
+it('use lint', () => {
+  const opts = Object.assign({}, baseMockPrompt, {
+    lint: 'all mode'
   })
   return sao.mockPrompt(template, opts)
     .then(({ files }) => {
       const pkg = JSON.parse(files['package.json'].contents.toString())
-      expect(pkg.devDependencies['eslint-config-vue-app']).toBeDefined()
-      expect(pkg.devDependencies['babel-eslint']).toBeDefined()
-      expect(pkg.devDependencies['xo']).toBeDefined()
-      expect(pkg.xo).toEqual({
-        parser: 'babel-eslint',
-        extends: 'vue-app',
-        rules: {
-          'unicorn/filename-case': 0
-        }
-      })
-      expect(pkg.scripts['lint']).toBe('xo')
-      expect(pkg.scripts['lint:fix']).toBe('xo --fix')
-      expect(pkg.scripts['test']).toBe('xo')
+      expect(pkg.devDependencies['poi-preset-eslint-react']).toBeDefined()
+      expect(files['poi.config.js'].contents.toString()).toMatch('require(\'poi-preset-eslint-react\')({ mode: \'*\' })')
     })
 })
 
@@ -68,7 +58,7 @@ it('add test', () => {
 
       const pkg = JSON.parse(files['package.json'].contents.toString())
       expect(pkg.devDependencies['react-jest']).toBeDefined()
-      expect(pkg.scripts['test']).toBe('xo && react-jest --env=jsdom')
+      expect(pkg.scripts['test']).toBe('react-jest --env=jsdom')
     })
 })
 
@@ -82,30 +72,5 @@ it('use enzyme', () => {
       const pkg = JSON.parse(files['package.json'].contents.toString())
       expect(pkg.devDependencies['enzyme']).toBeDefined()
       expect(files['src/__test__/App.test.js'].contents.toString()).toMatch('import { shallow } from \'enzyme\'')
-    })
-})
-
-it('add offline', () => {
-  const opts = Object.assign({}, baseMockPrompt, {
-    offline: true
-  })
-  return sao.mockPrompt(template, opts)
-    .then(({ fileList, files }) => {
-      expect(fileList).toContain('src/pwa.js')
-
-      const pkg = JSON.parse(files['package.json'].contents.toString())
-      expect(pkg.devDependencies['offline-plugin']).toBeDefined()
-      expect(files['poi.config.js'].contents.toString()).toMatch('const OfflinePlugin = require(\'offline-plugin\')')
-    })
-})
-
-it('add poi', () => {
-  const opts = Object.assign({}, baseMockPrompt, {
-    poi: true
-  })
-  return sao.mockPrompt(template, opts)
-    .then(({ files }) => {
-      const pkg = JSON.parse(files['package.json'].contents.toString())
-      expect(pkg.devDependencies['poi']).toBeDefined()
     })
 })
