@@ -25,6 +25,11 @@ module.exports = {
       },
       store: true
     },
+    pwa: {
+      message: 'PWA support?',
+      type: 'confirm',
+      default: true
+    },
     lint: {
       message: 'Choose the eslint mode:',
       type: 'list',
@@ -48,7 +53,8 @@ module.exports = {
     }
   },
   filters: {
-    'src/__test__/**': 'test'
+    'src/__test__/**': 'test',
+    'src/pwa.js': 'pwa'
   },
   move: {
     'gitignore': '.gitignore'

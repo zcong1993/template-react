@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "poi",
-    "test": "<%= test ? 'react-jest --env=jsdom':'echo \'no test\'' %>",
+    "test": "<% if (test) { %>react-jest --env=jsdom<% }else{ %>echo 'no test'<%}%>",
     "build": "poi build"
   },
   "author": "<%= username %> <<%= email %>>",
@@ -22,7 +22,8 @@
     "enzyme": "^2.8.2",<% } %>
     "react-hot-loader": "next",
     "poi": "^8.0.5"<% if (lint !== 'never') { %>,
-    "poi-preset-eslint-react": "^0.0.2"<% } %>
+    "poi-preset-eslint-react": "^0.0.2"<% } %><% if(pwa) { %>,
+    "poi-preset-offline": "^8.0.2"<% } %>
   },
   "dependencies": {
     "react": "^15.4.2",
