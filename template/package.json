@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "productName": "<%= name %>",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "<%= description %>",
   "repository": {
     "url": "<%= username %>/<%= name %>",
