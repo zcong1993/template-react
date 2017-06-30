@@ -1,38 +1,18 @@
 import { Component } from 'react'
-import Title from './components/Title'
+import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      time: new Date().getTime(),
-      seconds: 0,
-      timer: null
-    }
-  }
-
-  componentDidMount() {
-    const timer = setInterval(() => {
-      const elapsed = Math.round((new Date().getTime() - this.state.time) / 100)
-      const seconds = (elapsed / 10) + (elapsed % 10 ? '' : '.0')
-      this.setState({
-        seconds
-      })
-    }, 50)
-    this.setState({
-      timer
-    })
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.state.timer)
-  }
-
   render() {
     return (
-      <div>
-        <Title />
-        <p>React has been successfully running for <span style={{ color: 'red' }}>{this.state.seconds}</span> seconds.</p>
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo"/>
+          <h2>Welcome to React</h2>
+        </div>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     )
   }

@@ -16,7 +16,7 @@ const baseMockPrompt = {
 it('default', () => {
   return sao.mockPrompt(template, baseMockPrompt)
     .then(({ fileList }) => {
-      expect(fileList).toEqual(['.babelrc', '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'circle.yml', 'index.ejs', 'package.json', 'poi.config.js', 'src/App.js', 'src/components/Title.js', 'src/index.js', 'static/android-chrome-192x192.png', 'static/android-chrome-512x512.png', 'static/apple-touch-icon.png', 'static/browserconfig.xml', 'static/favicon-16x16.png', 'static/favicon-32x32.png', 'static/favicon.ico', 'static/mstile-150x150.png', 'static/safari-pinned-tab.svg'].sort())
+      expect(fileList).toEqual(['.babelrc', '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE', 'README.md', 'circle.yml', 'index.ejs', 'package.json', 'poi.config.js', 'src/App.js', 'src/components/Title.js', 'src/index.js', 'static/android-chrome-192x192.png', 'static/android-chrome-512x512.png', 'static/apple-touch-icon.png', 'static/browserconfig.xml', 'static/favicon-16x16.png', 'static/favicon-32x32.png', 'static/favicon.ico', 'static/mstile-150x150.png', 'static/safari-pinned-tab.svg', 'src/App.css', 'src/index.css', 'src/logo.svg'].sort())
   })
 })
 
