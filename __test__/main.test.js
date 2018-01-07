@@ -70,6 +70,6 @@ it('use enzyme', () => {
     .then(({ files }) => {
       const pkg = JSON.parse(files['package.json'].contents.toString())
       expect(pkg.devDependencies['enzyme']).toBeDefined()
-      expect(files['src/__test__/App.test.js'].contents.toString()).toMatch('import { shallow } from \'enzyme\'')
+      expect(files['src/__test__/App.test.js'].contents.toString()).toMatch('import { shallow, configure } from \'enzyme\'')
     })
 })
