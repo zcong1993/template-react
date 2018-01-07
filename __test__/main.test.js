@@ -26,7 +26,6 @@ it('add pwa', () => {
   })
   return sao.mockPrompt(template, opts)
     .then(({ fileList, files }) => {
-      expect(fileList).toContain('src/pwa.js')
 
       const pkg = JSON.parse(files['package.json'].contents.toString())
       expect(pkg.devDependencies['poi-preset-offline']).toBeDefined()

@@ -2,7 +2,7 @@
 
 Now `vbuild` is renamed to `poi`
 
-Now using [vbuild 7](https://github.com/egoist/vbuild), for 6.0 please see branch [6.0](https://github.com/zcong1993/template-react/tree/6.0)
+Now using [poi 9](https://github.com/egoist/poi), for 6.0 please see branch [6.0](https://github.com/zcong1993/template-react/tree/6.0)
 
 [![NPM version](https://img.shields.io/npm/v/template-react.svg?style=flat)](https://npmjs.com/package/template-react) [![NPM downloads](https://img.shields.io/npm/dm/template-react.svg?style=flat)](https://npmjs.com/package/template-react)
 [![Build Status](https://img.shields.io/circleci/project/zcong1993/template-react/master.svg?style=flat)](https://circleci.com/gh/zcong1993/template-react)

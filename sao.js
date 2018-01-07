@@ -54,7 +54,6 @@ module.exports = {
   },
   filters: {
     'src/__test__/**': 'test',
-    'src/pwa.js': 'pwa',
     'static/manifest.json': 'pwa'
   },
   move: {
